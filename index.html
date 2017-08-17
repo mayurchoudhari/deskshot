@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>-->
+    <title>DeskShot</title>
+    <style>
+        #close, #shot {
+            width: 100%;
+            color: #a700ff;
+            text-align: center;
+        }
+
+        #shot {
+            position: fixed;
+            top: 45%;
+        }
+
+        #shot button {
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 20px;
+            width: 150px;
+            height: 100px;
+            background: none;
+            border: 2px solid #a700ff;
+            border-radius: 5px;
+        }
+
+        #close {
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 20px;
+            position: fixed;
+            bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+        }
+        #drag {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 40px;
+            -webkit-app-region: drag;
+            z-index: 9;
+        }
+    </style>
+</head>
+<body>
+<div id="drag"></div>
+<h1>DeskShot</h1>
+<div id="shot">
+    <button>Take Shot</button><br />
+    <span></span>
+</div>
+<div id="close">close</div>
+</body>
+
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+</script>
+<script>if (window.module) module = window.module;</script>
+</html>
