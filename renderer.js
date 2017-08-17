@@ -50,7 +50,8 @@ remote.BrowserWindow.getFocusedWindow().on("minimize", function (event) {
                                 if(body.success){
                                     remote.BrowserWindow.fromId(Id).setMaximumSize(800, 600);
                                     remote.BrowserWindow.fromId(Id).maximize();
-                                    $("#shot").find("span").html("File Uploaded at <a href='" + body.link + "'>screenshot.png</a>");
+                                    $("#shot").find("span").eq(0).html("File Uploaded, <a href='" + body.link + "'>download</a>");
+                                    $("#shot").find("span").eq(1).html(body.link);
                                 }
                             });
                             // shell.openExternal('file://' + screenshotPath)
