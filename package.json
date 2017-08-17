@@ -1,10 +1,13 @@
 {
   "name": "deskshot",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A simple multi-platform screenshot application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "repository": "https://github.com/mayurchoudhari/deskshot",
   "keywords": [
@@ -16,9 +19,16 @@
   ],
   "author": "Mayur Choudhari",
   "devDependencies": {
-    "electron": "~1.6.2"
+    "electron": "~1.6.2",
+    "electron-builder": "^19.22.1"
   },
   "dependencies": {
     "form-data": "^2.2.0"
+  },
+  "build": {
+    "appId": "com.techxtrem.deskshot",
+    "mac": {
+      "category": "your.app.category.type"
+    }
   }
 }
